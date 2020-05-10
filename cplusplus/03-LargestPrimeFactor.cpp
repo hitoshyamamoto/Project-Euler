@@ -11,8 +11,6 @@ bool quadratico(int n){
 }
 
 void crivoAtkin(unsigned long long int entrada){
-
-    //Teste com 2 e 3 que são primos
     if(entrada%2==0){
         printf("[2] = 2\n");
         entrada = entrada/2;
@@ -29,21 +27,18 @@ void crivoAtkin(unsigned long long int entrada){
                 int n = (4*x*x) + (y*y); 
                 if (n <= entrada && (n % 12 == 1 || n % 12 == 5)){
                     if(entrada%n==0 && quadratico(n)){
-                        printf("[%d %d] = %d\n",x,y,n);
                         entrada = entrada/n; 
                     }
                 }
                 n = (3*x*x) + (y*y); 
                 if (n <= entrada && n % 12 == 7){
                     if(entrada%n==0 && quadratico(n)){
-                        printf("[%d %d] = %d\n",x,y,n);
                         entrada = entrada/n;
                     }
                 }
                 n = (3*x*x) - (y*y); 
                 if (x > y && n <= entrada && n % 12 == 11){
                     if(entrada%n==0 && quadratico(n)){
-                        printf("[%d %d] = %d\n",x,y,n);
                         entrada = entrada/n;
                     }
                 }
